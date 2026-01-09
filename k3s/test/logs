@@ -1,0 +1,641 @@
+INFO - Setting uid:gid of valheim to 0:0
+INFO - Setting timezone Etc/UTC
+INFO - Setting up syslogd - logging to stdout
+2025-03-23 18:16:01,722 INFO Included extra file "/usr/local/etc/supervisor/conf.d/syslog.conf" during parsing
+2025-03-23 18:16:01,722 INFO Set uid to user 0 succeeded
+2025-03-23 18:16:01,727 INFO RPC interface 'supervisor' initialized
+2025-03-23 18:16:01,727 INFO supervisord started with pid 24
+2025-03-23 18:16:02,734 INFO spawned: 'syslogd' with pid 25
+2025-03-23 18:16:02,742 INFO spawned: 'crond' with pid 26
+2025-03-23 18:16:02,746 INFO spawned: 'valheim-bootstrap' with pid 27
+Mar 23 18:16:02 syslogd started: BusyBox v1.36.1
+2025-03-23 18:16:02,752 INFO success: valheim-bootstrap entered RUNNING state, process has stayed up for > than 0 seconds (startsecs)
+Mar 23 18:16:02 cron[26]: (CRON) INFO (pidfile fd = 3)
+Mar 23 18:16:02 cron[26]: (CRON) INFO (Running @reboot jobs)
+Mar 23 18:16:02 supervisord: valheim-bootstrap DEBUG - [27] - Running commit 51493c814f2c3e1039c5961efc1965474f4dac69
+Mar 23 18:16:02 supervisord: valheim-bootstrap DEBUG - [27] - Creating cron to do world backups using schedule 5 * * * *
+Mar 23 18:16:02 supervisord: valheim-bootstrap DEBUG - [27] - Creating cron to check for updates using schedule */15 * * * *
+Mar 23 18:16:02 supervisord: valheim-bootstrap DEBUG - [27] - Creating cron to restart valheim-server using schedule 10 5 * * *
+Mar 23 18:16:02 crontab[34]: (root) REPLACE (root)
+2025-03-23 18:16:02,956 INFO spawned: 'valheim-updater' with pid 37
+Mar 23 18:16:02 supervisord: valheim-updater DEBUG - [37] - Running Valheim Server updater as user valheim uid 0
+Mar 23 18:16:02 supervisord: valheim-updater DEBUG - [37] - Kernel: Linux valheim-server-6c774cf995-jp7g7 6.12.18-0-lts #1-Alpine SMP PREEMPT_DYNAMIC 2025-03-10 19:21:24 x86_64 GNU/Linux
+Mar 23 18:16:02 supervisord: valheim-updater DEBUG - [37] - Found CPU with 2496.038 MHz
+Mar 23 18:16:02 supervisord: valheim-updater DEBUG - [37] - Memory total/free/available: 4019720/704200/2856788
+Mar 23 18:16:02 supervisord: valheim-updater DEBUG - [37] - Storage configuration:
+Mar 23 18:16:02 supervisord: valheim-updater Filesystem      Size  Used Avail Use% Mounted on
+Mar 23 18:16:02 supervisord: valheim-updater overlay          28G  8.8G   18G  35% /
+Mar 23 18:16:02 supervisord: valheim-updater /dev/sda3        28G  8.8G   18G  35% /config
+Mar 23 18:16:02 supervisord: valheim-updater grep: 
+Mar 23 18:16:02 supervisord: valheim-updater /etc/mtab: No such file or directory
+Mar 23 18:16:03 supervisord: valheim-updater ERROR - Error in line 28 command 'grep -v -E "(/sys/|/etc/|/run/)"' exited with code 1 in ::main::main called in line 306
+Mar 23 18:16:03 supervisord: valheim-updater DEBUG - [37] - Valheim updater was just started - skipping connected players check
+Mar 23 18:16:03 supervisord: valheim-updater INFO - Downloading/updating/validating Valheim server from Steam
+2025-03-23 18:16:04,194 INFO success: syslogd entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-23 18:16:04,194 INFO success: crond entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+2025-03-23 18:16:04,195 INFO success: valheim-updater entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Mar 23 18:16:04 supervisord: valheim-bootstrap valheim-updater: started
+2025-03-23 18:16:04,440 INFO spawned: 'valheim-backup' with pid 76
+Mar 23 18:16:04 supervisord: valheim-backup INFO - Backing up Valheim server worlds to /config/backups/worlds-20250323-181604.zip
+Mar 23 18:16:04 supervisord: valheim-backup   adding: config/worlds_local/ (stored 0%)
+Mar 23 18:16:04 supervisord: valheim-backup   adding: config/worlds_local/example-world-name.fwl (deflated 10%)
+Mar 23 18:16:04 supervisord: valheim-backup INFO - Removing backups older than 3 days
+Mar 23 18:16:05 supervisord: valheim-updater Redirecting stderr to '/home/valheim/Steam/logs/stderr.txt'
+Mar 23 18:16:05 supervisord: valheim-updater Logging directory: '/home/valheim/Steam/logs'
+Mar 23 18:16:05 supervisord: valheim-updater [  0%] Checking for available updates...
+Mar 23 18:16:05 supervisord: valheim-updater [----] Verifying installation...
+Mar 23 18:16:05 supervisord: valheim-updater UpdateUI: skip show logo
+Mar 23 18:16:05 supervisord: valheim-updater Steam Console Client (c) Valve Corporation - version 1742420332
+Mar 23 18:16:05 supervisord: valheim-updater -- type 'quit' to exit --
+Mar 23 18:16:05 supervisord: valheim-updater Loading Steam API...
+Mar 23 18:16:05 supervisord: valheim-updater IPC function call IClientUtils::GetSteamRealm took too long: 291 msec
+Mar 23 18:16:05 supervisord: valheim-updater OK
+Mar 23 18:16:05 supervisord: valheim-updater 
+Mar 23 18:16:05 supervisord: valheim-updater Connecting anonymously to Steam Public...
+2025-03-23 18:16:06,426 INFO success: valheim-backup entered RUNNING state, process has stayed up for > than 1 seconds (startsecs)
+Mar 23 18:16:06 supervisord: valheim-bootstrap valheim-backup: started
+2025-03-23 18:16:06,463 INFO exited: valheim-bootstrap (exit status 0; expected)
+Mar 23 18:16:09 supervisord: valheim-updater OK
+Mar 23 18:16:09 supervisord: valheim-updater Waiting for client config...OK
+Mar 23 18:16:09 supervisord: valheim-updater Waiting for user info...
+Mar 23 18:16:18 supervisord: valheim-updater OK
+Mar 23 18:16:18 supervisord: valheim-updater  Update state (0x3) reconfiguring, progress: 0.00 (0 / 0)
+Mar 23 18:16:18 supervisord: valheim-updater  Update state (0x5) verifying install, progress: 6.77 (115433194 / 1705402082)
+Mar 23 18:16:18 supervisord: valheim-updater  Update state (0x5) verifying install, progress: 37.71 (643037739 / 1705402082)
+Mar 23 18:16:18 supervisord: valheim-updater  Update state (0x5) verifying install, progress: 72.01 (1228063745 / 1705402082)
+Mar 23 18:16:18 supervisord: valheim-updater Success! App '896660' fully installed.
+Mar 23 18:16:18 supervisord: valheim-updater CWorkThreadPool::~CWorkThreadPool: work processing queue not empty: 1 items discarded.
+Mar 23 18:16:18 supervisord: valheim-updater .d..t...... ./
+Mar 23 18:16:18 supervisord: valheim-updater INFO - Valheim Server is already the latest version
+Mar 23 18:16:18 supervisord: valheim-updater DEBUG - [37] - Writing file to start Valheim server
+2025-03-23 18:16:18,574 INFO spawned: 'valheim-server' with pid 121
+Mar 23 18:16:18 supervisord: valheim-server INFO - Running Valheim Server
+Mar 23 18:16:18 supervisord: valheim-server DEBUG - [121] - Server config is name: example-server-name, port: 2456/udp, world: example-world-name, public: 1, mod: none
+Mar 23 18:16:18 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.609546     129 main.go:76] Configuring Valheim server log filter
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.610932     129 main.go:96] Removing log lines starting with '(Filename:'
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.611255     129 main.go:89] Removing log lines matching ' '
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.611277     129 main.go:125] Removing invalid UTF-8 chars: true
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.611291     129 main.go:122] Removing empty log lines: true
+Mar 23 18:16:18 supervisord: valheim-server I0323 18:16:18.611315     129 main.go:96] Removing log lines starting with 'src/steamnetworkingsockets/clientlib/steamnetworkingsockets_lowlevel.cpp'
+Mar 23 18:16:18 supervisord: valheim-server [UnityMemory] Configuration Parameters - Can be set up in boot.config
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-bucket-allocator-granularity=16"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-bucket-allocator-bucket-count=8"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-bucket-allocator-block-size=4194304"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-bucket-allocator-block-count=1"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-main-allocator-block-size=16777216"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-thread-allocator-block-size=16777216"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-gfx-main-allocator-block-size=16777216"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-gfx-thread-allocator-block-size=16777216"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-cache-allocator-block-size=4194304"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-typetree-allocator-block-size=2097152"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-bucket-allocator-granularity=16"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-bucket-allocator-bucket-count=8"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-bucket-allocator-block-size=4194304"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-bucket-allocator-block-count=1"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-allocator-block-size=16777216"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-profiler-editor-allocator-block-size=1048576"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-main=4194304"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-job-temp-allocator-block-size=2097152"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-job-temp-allocator-block-size-background=1048576"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-job-temp-allocator-reduction-small-platforms=262144"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-allocator-temp-initial-block-size-main=262144"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-allocator-temp-initial-block-size-worker=262144"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-background-worker=32768"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-job-worker=262144"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-preload-manager=262144"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-nav-mesh-worker=65536"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-audio-worker=65536"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-cloud-worker=32768"
+Mar 23 18:16:18 supervisord: valheim-server     "memorysetup-temp-allocator-size-gfx=262144"
+Mar 23 18:16:18 supervisord: valheim-server Mono path[0] = '/opt/valheim/server/valheim_server_Data/Managed'
+Mar 23 18:16:18 supervisord: valheim-server Mono config path = '/opt/valheim/server/valheim_server_Data/MonoBleedingEdge/etc'
+Mar 23 18:16:18 supervisord: valheim-server Preloaded 'libDiskSpacePlugin.so'
+Mar 23 18:16:18 supervisord: valheim-server Preloaded 'libparty.so'
+Mar 23 18:16:18 supervisord: valheim-server Preloaded 'libsteam_api.so'
+Mar 23 18:16:18 supervisord: valheim-server [PhysX] Initialized MultithreadedTaskDispatcher with 2 workers.
+Mar 23 18:16:18 supervisord: valheim-server Initialize engine version: 2022.3.50f1 (c3db7f8bf9b1)
+Mar 23 18:16:18 supervisord: valheim-server [Subsystems] Discovering subsystems at path /opt/valheim/server/valheim_server_Data/UnitySubsystems
+Mar 23 18:16:18 supervisord: valheim-server Forcing GfxDevice: Null
+Mar 23 18:16:18 supervisord: valheim-server GfxDevice: creating device client; threaded=0; jobified=0
+Mar 23 18:16:18 supervisord: valheim-server NullGfxDevice:
+Mar 23 18:16:18 supervisord: valheim-server     Version:  NULL 1.0 [1.0]
+Mar 23 18:16:18 supervisord: valheim-server     Renderer: Null Device
+Mar 23 18:16:18 supervisord: valheim-server     Vendor:   Unity Technologies
+Mar 23 18:16:18 supervisord: valheim-server Begin MonoManager ReloadAssembly
+Mar 23 18:16:18 supervisord: valheim-server - Loaded All Assemblies, in  0.199 seconds
+Mar 23 18:16:18 supervisord: valheim-server - Finished resetting the current domain, in  0.003 seconds
+Mar 23 18:16:18 supervisord: valheim-server ERROR: Shader Sprites/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server ERROR: Shader Sprites/Mask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server There is no texture data available to upload.
+Mar 23 18:16:19 supervisord: valheim-server [PhysX] Initialized MultithreadedTaskDispatcher with 2 workers.
+Mar 23 18:16:19 supervisord: valheim-server UnloadTime: 1.281502 ms
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Set background loading budget to Low
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loading first scene
+Mar 23 18:16:19 supervisord: valheim-server ERROR: Shader TextMeshPro/Mobile/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader Unsupported: 'TextMeshPro/Distance Field' - All subshaders removed
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:16:19 supervisord: valheim-server ERROR: Shader TextMeshPro/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader Unsupported: 'TextMeshPro/Distance Field' - All subshaders removed
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:16:19 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:16:19 supervisord: valheim-server ERROR: Shader GUI/Text Shader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server [PhysX] Initialized MultithreadedTaskDispatcher with 2 workers.
+Mar 23 18:16:19 supervisord: valheim-server UnloadTime: 0.176538 ms
+Mar 23 18:16:19 supervisord: valheim-server ERROR: Shader TextMeshPro/Mobile/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:16:19 supervisord: valheim-server Unloading 5 Unused Serialized files (Serialized files now loaded: 8)
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Fetching PlatformPrefs 'GuiScale' before loading defaults
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Fetching PlatformPrefs 'GuiScale' before loading defaults
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Fetching PlatformPrefs 'ControllerLayout' before loading defaults
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Initializing loading indicator instance
+Mar 23 18:16:19 supervisord: valheim-server Unloading 173 unused Assets to reduce memory usage. Loaded Objects now: 2239.
+Mar 23 18:16:19 supervisord: valheim-server Total: 2.993555 ms (FindLiveObjects: 0.143797 ms CreateObjectMapping: 0.078947 ms MarkObjects: 2.602677 ms  DeleteObjects: 0.167565 ms)
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Starting to load scene:start.unity (169d7618616154c03be07e9ad3af5893)
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Set background loading budget to Normal
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #0 - 'localization' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #1 - 'localization_extra' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #2 - 'heightmap_message' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #3 - 'localization_witch' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #4 - 'localization_emotes' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #5 - 'localization_ashlands' language: 'English'
+Mar 23 18:16:19 supervisord: valheim-server 03/23/2025 18:16:19: Loaded localization file #6 - 'localization_captions' language: 'English'
+Mar 23 18:16:23 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:23 supervisord: valheim-server 03/23/2025 18:16:23: Set background loading budget to High
+2025-03-23 18:16:28,623 INFO success: valheim-server entered RUNNING state, process has stayed up for > than 10 seconds (startsecs)
+Mar 23 18:16:28 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:28 supervisord: valheim-updater valheim-server: started
+Mar 23 18:16:33 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:38 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:43 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:48 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:53 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:16:58 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:01 CRON[202]: pam_unix(cron:session): session opened for user root(uid=0) by (uid=0)
+Mar 23 18:17:01 CRON[203]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Mar 23 18:17:01 CRON[202]: pam_unix(cron:session): session closed for user root
+Mar 23 18:17:03 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:08 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:13 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:18 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:23 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:28 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:33 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:38 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:43 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:48 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:53 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:17:58 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:03 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:08 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:13 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:18 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:23 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:28 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:33 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:38 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:43 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:48 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:49 supervisord: valheim-server Couldn't create a Convex Mesh from source mesh "default" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+Mar 23 18:18:53 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:18:58 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:03 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:08 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:13 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:18 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:23 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:28 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:33 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:38 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:43 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:48 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:53 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:19:58 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:03 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:06 supervisord: valheim-server The referenced script on this Behaviour (Game Object '<null>') is missing!
+Mar 23 18:20:08 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:13 supervisord: valheim-server Couldn't create a Convex Mesh from source mesh "default" within the maximum polygons limit (256). The partial hull will be used. Consider simplifying your mesh.
+Mar 23 18:20:13 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:18 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:49 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:54 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:20:59 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:04 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:09 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:14 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:19 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:49 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:54 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:21:59 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:04 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:09 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:14 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:19 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:49 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:54 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:22:59 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:04 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:09 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:14 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:19 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:49 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:50 supervisord: valheim-server The referenced script on this Behaviour (Game Object '<null>') is missing!
+Mar 23 18:23:54 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:23:59 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:04 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:09 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:14 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:19 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:48 supervisord: valheim-server The referenced script on this Behaviour (Game Object '<null>') is missing!
+Mar 23 18:24:49 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:54 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:24:59 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:04 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:09 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:14 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:19 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:24 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:29 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:34 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:39 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Legacy Shaders/VertexLit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Legacy Shaders/Diffuse shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Legacy Shaders/Diffuse' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/ShadowBlob' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/ShadowBlob shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/ShadowBlob' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Legacy Shaders/Particles/Alpha Blended shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Yggdrasil_root' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Yggdrasil_root shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Yggdrasil_root' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Flow shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Unlit/WeaponGlow shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Unlit/Lighting shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard (Specular setup)' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Standard (Specular setup) shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard (Specular setup)' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Mesh Flipbook Particle shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader UI/Heat Distort shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Creature shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/AlphaParticle shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/FlowOpaque shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Tar shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Surface2' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Particles/Standard Surface2 shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Surface2' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Distortion' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Distortion shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Distortion' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Autodesk Interactive shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Autodesk Interactive' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Lux Lit Particles/ Tess Bumped shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Gradient Mapped Particle (Unlit) shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/LitParticles' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/LitParticles shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/LitParticles' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard TwoSided' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Standard TwoSided shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard TwoSided' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Legacy Shaders/Particles/Alpha Blended Premultiply shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/StaticRock shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Standard shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Standard' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Hidden/RadialSegementShader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Bonemass' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Bonemass shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Bonemass' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Blob' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Blob shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Blob' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Rug shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Unlit/BeaconBeam shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Clouds' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Clouds shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Clouds' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Lux Lit Particles/ Bumped shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/SkyObject' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/SkyObject shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/SkyObject' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Legacy Shaders/Particles/Additive shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Player' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Player shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Player' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/LitGui shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Piece shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Water' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Water shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Water' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Unlit2' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Particles/Standard Unlit2 shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Unlit2' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/ParticleDecal shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Particle (Unlit) shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/WaterMask' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/WaterMask shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/WaterMask' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Heightmap' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Heightmap shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Heightmap' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader TextMeshPro/Distance Field (Surface) shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Vegetation' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Vegetation shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Vegetation' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Grass' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Grass shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Grass' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Unlit' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Particles/Standard Unlit shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Particles/Standard Unlit' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Decal shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Unlit/Color shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Trilinearmap' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/Trilinearmap shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Trilinearmap' - All subshaders removed
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:41 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Custom/GuiScroll shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:41 supervisord: valheim-server ERROR: Shader Unlit/Invis shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:44 supervisord: valheim-server DEBUG - [121] - Waiting for server to listen on UDP query port 2457
+Mar 23 18:25:46 supervisord: valheim-server Unloading 2 Unused Serialized files (Serialized files now loaded: 16)
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Set background loading budget to Low
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Destroying loading indicator instance
+Mar 23 18:25:46 supervisord: valheim-server [PhysX] Initialized MultithreadedTaskDispatcher with 2 workers.
+Mar 23 18:25:46 supervisord: valheim-server UnloadTime: 12.362477 ms
+Mar 23 18:25:46 supervisord: valheim-server Only custom filters can be played. Please add a custom filter or an audioclip to the audiosource (Amb_MainMenu).
+Mar 23 18:25:46 supervisord: valheim-server HDR Render Texture not supported, disabling HDR on reflection probe.
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Missing audio clip in music respawn
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Get create world example-world-name
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Using environment steamid 892970
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Using steam APPID:892970
+Mar 23 18:25:46 supervisord: valheim-server [S_API] SteamAPI_Init(): Loaded local 'steamclient.so' OK.
+Mar 23 18:25:46 supervisord: valheim-server CAppInfoCacheReadFromDiskThread took 4 milliseconds to initialize
+Mar 23 18:25:46 supervisord: valheim-server Setting breakpad minidump AppID = 892970
+Mar 23 18:25:46 supervisord: valheim-server SteamInternal_SetMinidumpSteamID:  Caching Steam ID:  76561197960265728 [API loaded no]
+Mar 23 18:25:46 supervisord: valheim-server [S_API FAIL] Tried to access Steam interface SteamNetworkingUtils004 before SteamAPI_Init succeeded.
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Server ID 90071992547409920
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Authentication:k_ESteamNetworkingAvailability_Waiting
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Steam game server initialized
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Using default prefs
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Valheim version: l-0.220.4 (network version 33)
+Mar 23 18:25:46 supervisord: valheim-server Trying to set graphic mode to 'Custom'
+Mar 23 18:25:46 supervisord: valheim-server Graphic mode 'Custom' is not or no longer supported. Fallback to default mode for platform...
+Mar 23 18:25:46 supervisord: valheim-server Graphic mode 'Custom' applied!
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Worldgenerator version setup:2
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Console: Valheim l-0.220.4 (network version 33)
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Console: 
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Console: type "help" - for commands
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Console: 
+Mar 23 18:25:46 supervisord: valheim-server 03/23/2025 18:25:46: Render threading mode:SingleThreaded
+Mar 23 18:25:46 supervisord: valheim-server ERROR: Shader UI/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:47 supervisord: valheim-server 03/23/2025 18:25:47: Builder started
+Mar 23 18:25:47 supervisord: valheim-server 03/23/2025 18:25:47: Sending PlayFab login request (attempt 1)
+Mar 23 18:25:47 supervisord: valheim-server 03/23/2025 18:25:47: Login postponed until ID has been set.
+Mar 23 18:25:47 supervisord: valheim-server The shader Hidden/Dof/DepthOfFieldHdr (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.DepthOfField) is not supported on this platform!
+Mar 23 18:25:47 supervisord: valheim-server The image effect Main Camera (UnityStandardAssets.ImageEffects.DepthOfField) has been disabled as it's not supported on the current platform.
+Mar 23 18:25:47 supervisord: valheim-server The shader Hidden/SunShaftsComposite (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) is not supported on this platform!
+Mar 23 18:25:47 supervisord: valheim-server The shader Hidden/SimpleClear (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) is not supported on this platform!
+Mar 23 18:25:47 supervisord: valheim-server The image effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) has been disabled as it's not supported on the current platform.
+Mar 23 18:25:47 supervisord: valheim-server 03/23/2025 18:25:47: Starting music menu
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader Unsupported: 'TextMeshPro/Distance Field' - All subshaders removed
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:47 supervisord: valheim-server ERROR: Shader TextMeshPro/Distance Field shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader Unsupported: 'TextMeshPro/Distance Field' - All subshaders removed
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:47 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:47 supervisord: valheim-server ERROR: Shader TextMeshPro/Sprite shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server Unloading 87553 unused Assets to reduce memory usage. Loaded Objects now: 200179.
+Mar 23 18:25:48 supervisord: valheim-server Total: 428.963284 ms (FindLiveObjects: 29.145581 ms CreateObjectMapping: 54.492772 ms MarkObjects: 292.995993 ms  DeleteObjects: 52.328068 ms)
+Mar 23 18:25:48 supervisord: valheim-server The referenced script on this Behaviour (Game Object '<null>') is missing!
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Hidden/RadialCutoutShader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/WaterBottom' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Custom/WaterBottom shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/WaterBottom' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Yggdrasil' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Custom/Yggdrasil shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/Yggdrasil' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Unlit/DepthWrite shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader UI/Default shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Custom/mapshader shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader UI/Lava Indicator shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Custom/icon shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'UI/Unlit/Transparent' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'UI/Unlit/Transparent' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/UI_BGBlur' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server ERROR: Shader Custom/UI_BGBlur shader is not supported on this GPU (none of subshaders/fallbacks are suitable)
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Unsupported: 'Custom/UI_BGBlur' - All subshaders removed
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader Did you use #pragma only_renderers and omit this platform?
+Mar 23 18:25:48 supervisord: valheim-server WARNING: Shader If subshaders removal was intentional, you may have forgotten turning Fallback off?
+Mar 23 18:25:48 supervisord: valheim-server [PhysX] Initialized MultithreadedTaskDispatcher with 2 workers.
+Mar 23 18:25:48 supervisord: valheim-server UnloadTime: 24.098237 ms
+Mar 23 18:25:48 supervisord: valheim-server HDR Render Texture not supported, disabling HDR on reflection probe.
+Mar 23 18:25:48 supervisord: valheim-server HDR Render Texture not supported, disabling HDR on reflection probe.
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Audioman already exist, destroying self
+Mar 23 18:25:48 supervisord: valheim-server src/clientdll/cminterface.cpp (2124) : !BLoggedOn()
+Mar 23 18:25:48 supervisord: valheim-server src/clientdll/cminterface.cpp (2124) : !BLoggedOn()
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Using default prefs
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Console: Valheim l-0.220.4 (network version 33)
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Console: 
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Console: type "help" - for commands
+Mar 23 18:25:48 supervisord: valheim-server 03/23/2025 18:25:48: Console: 
+Mar 23 18:25:48 supervisord: valheim-server Unloading 3 Unused Serialized files (Serialized files now loaded: 17)
+Mar 23 18:25:49 supervisord: valheim-server 03/23/2025 18:25:49: isModded: False
+Mar 23 18:25:49 supervisord: valheim-server 03/23/2025 18:25:49: Zonesystem Awake 15756844
+Mar 23 18:25:49 supervisord: valheim-server 03/23/2025 18:25:49: DungeonDB Awake 15756844
+Mar 23 18:25:49 supervisord: valheim-server 03/23/2025 18:25:49: Worldgenerator version setup:2
+Mar 23 18:25:49 supervisord: valheim-server DEBUG - [121] - Server is now listening on UDP query port 2457
+Mar 23 18:25:53 supervisord: valheim-server ArgumentNullException: Value cannot be null.
+Mar 23 18:25:53 supervisord: valheim-server Parameter name: shader
+Mar 23 18:25:53 supervisord: valheim-server   at (wrapper managed-to-native) UnityEngine.Material.CreateWithShader(UnityEngine.Material,UnityEngine.Shader)
+Mar 23 18:25:53 supervisord: valheim-server   at UnityEngine.Material..ctor (UnityEngine.Shader shader) [0x00008] in <bbfcdb8e91a44ae79d53e845fd06b4b5>:0 
+Mar 23 18:25:53 supervisord: valheim-server   at ShieldDomeImageEffect.Awake () [0x0000b] in <73dd9e283f4347fdbd479da80df7333c>:0 
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: /w [text] - Whisper
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: /s [text] - Shout
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: /die - Kill yourself
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: /resetspawn - Reset spawn point
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: /[emote]
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: Emotes: wave, sit, challenge, cheer, nonono, thumbsup, point, blowkiss, bow, cower, cry, despair, flex, comehere, headbang, kneel, laugh, roar, shrug, dance, relax, toast, rest
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Console: 
+Mar 23 18:25:53 supervisord: valheim-server Unloading 367 unused Assets to reduce memory usage. Loaded Objects now: 199035.
+Mar 23 18:25:53 supervisord: valheim-server Total: 259.855024 ms (FindLiveObjects: 14.555305 ms CreateObjectMapping: 40.818592 ms MarkObjects: 203.793407 ms  DeleteObjects: 0.686990 ms)
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Zonesystem Start 15756844
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Added 3 locations, 0 vegetations, 0 environments, 0 biome env-setups, 0 clutter  from main
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Added 1 locations, 0 vegetations, 2 environments, 0 biome env-setups, 0 clutter  from main
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Added 27 locations, 25 vegetations, 5 environments, 1 biome env-setups, 3 clutter  from main
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Added 4 locations, 0 vegetations, 1 environments, 0 biome env-setups, 0 clutter  from main
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Added 25 locations, 33 vegetations, 8 environments, 2 biome env-setups, 2 clutter  from main
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: DungeonDB Start 15756844
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: ZRpc timeout set to 30s 
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: ZNET START
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Load world: example-world-name (example-world-name)
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53:   missing /home/valheim/.config/unity3d/IronGate/Valheim/worlds_local/example-world-name.db
+Mar 23 18:25:53 supervisord: valheim-server The shader Hidden/Dof/DepthOfFieldHdr (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.DepthOfField) is not supported on this platform!
+Mar 23 18:25:53 supervisord: valheim-server The image effect Main Camera (UnityStandardAssets.ImageEffects.DepthOfField) has been disabled as it's not supported on the current platform.
+Mar 23 18:25:53 supervisord: valheim-server The shader Hidden/SunShaftsComposite (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) is not supported on this platform!
+Mar 23 18:25:53 supervisord: valheim-server The shader Hidden/SimpleClear (UnityEngine.Shader) on effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) is not supported on this platform!
+Mar 23 18:25:53 supervisord: valheim-server The image effect Main Camera (UnityStandardAssets.ImageEffects.SunShafts) has been disabled as it's not supported on the current platform.
+Mar 23 18:25:53 supervisord: valheim-server Am I Host? True
+Mar 23 18:25:53 supervisord: valheim-server 03/23/2025 18:25:53: Game server connected
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: Setting up generating loading indicator
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting text! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: Generating locations
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:54 supervisord: valheim-server 03/23/2025 18:25:54: No instance when setting progress! Ignoring.
+Mar 23 18:25:55 supervisord: valheim-server 03/23/2025 18:25:55: No instance when setting progress! Ignoring.
+Mar 23 18:25:55 supervisord: valheim-server 03/23/2025 18:25:55: No instance when setting progress! Ignoring.
+Mar 23 18:25:55 supervisord: valheim-server 03/23/2025 18:25:55: No instance when setting progress! Ignoring.
+Mar 23 18:26:04 supervisord: valheim-server 03/23/2025 18:26:04: No instance when setting progress! Ignoring.
+Mar 23 18:26:13 supervisord: valheim-server 03/23/2025 18:26:13: No instance when setting progress! Ignoring.
+Mar 23 18:26:13 supervisord: valheim-server 03/23/2025 18:26:13: No instance when setting progress! Ignoring.
+Mar 23 18:26:13 supervisord: valheim-server 03/23/2025 18:26:13: No instance when setting progress! Ignoring.
+Mar 23 18:26:13 supervisord: valheim-server 03/23/2025 18:26:13: No instance when setting progress! Ignoring.
+Mar 23 18:26:13 supervisord: valheim-server 03/23/2025 18:26:13: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:15 supervisord: valheim-server 03/23/2025 18:26:15: No instance when setting progress! Ignoring.
+Mar 23 18:26:18 supervisord: valheim-server 03/23/2025 18:26:18: No instance when setting progress! Ignoring.
+Mar 23 18:26:21 supervisord: valheim-server 03/23/2025 18:26:21: No instance when setting progress! Ignoring.
+Mar 23 18:26:21 supervisord: valheim-server 03/23/2025 18:26:21: No instance when setting progress! Ignoring.
+Mar 23 18:26:21 supervisord: valheim-server 03/23/2025 18:26:21: No instance when setting progress! Ignoring.
+Mar 23 18:26:22 supervisord: valheim-server 03/23/2025 18:26:22: No instance when setting progress! Ignoring.
+Mar 23 18:26:22 supervisord: valheim-server 03/23/2025 18:26:22: No instance when setting progress! Ignoring.
