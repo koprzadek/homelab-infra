@@ -19,8 +19,3 @@ resource "incus_storage_pool" "volumes" {
   name   = "volumes"
   driver = "dir"
 }
-
-resource "incus_storage_volume" "jellyfin_data" {
-  name = "jellyfin_data"
-  pool = incus_storage_pool.volumes.name
-}
