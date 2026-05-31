@@ -135,29 +135,8 @@ resource "incus_instance" "dhcp-60-0" {
     EOT
   }
 }
-resource "incus_storage_volume" "nextcloud_data" {
-  name = "nextcloud-data"
-  pool = "local"
-  type = "custom"
-  target = "nix-c1"
-}
-
-resource "incus_instance" "nix-k" {
-  name = "nix-k${count.index}"
-  count = 3
-  image = "nixos/vm"
-  type = "virtual-machine"
-  profiles = [ "vxlan_1"]
-  config = {
-    "user.user-data" = <<-EOF
-      #cloud-config
-      hostname: nix-k${count.index}
-    EOF
-  }
-}
 
 resource "incus_instance" "nix-p" {
-  depends_on = [incus_storage_volume.nextcloud-data]
   count = 1
   name = "nix-p${count.index}"
   image = "nixos/container"
@@ -170,21 +149,32 @@ resource "incus_instance" "nix-p" {
   }
 
   device {
-    name = "nextcloud-data"
+    name = "jellyfin_data"
     type = "disk"
     properties = {
-      pool   = incus_storage_volume.nextcloud_data.pool
-      source = incus_storage_volume.nextcloud_data.name
-      path   = "/var/lib/nextcloud/data" # verify for your image
+      path = "/var/lib/jellyfin"
+      source = incus_storage_volume.jellyfin_data.name
+      pool = incus_storage_pool.volumes.name
     }
   }
 
-  target = incus_storage_volume.nextcloud_data.location
+  device {
+    name = "gpu"
+    type = "gpu"
+    properties = {
+      gid = "303"
+      mode = "666"
+    }
+  }
+
+  device {
+    name = "media"
+    type = "disk"
+    properties = {
+      path = "/data/media"
+      source = "/ssd/media"
+    }
+  }
+
+  target = incus_storage_volume.jellyfin_data.target
 }
-
-resource "incus_storage_volume" "nextcloud-data" {
-  name = "nextcloud-data"
-  pool = incus_storage_pool.p1.name
-
-}
-
