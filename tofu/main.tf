@@ -5,6 +5,22 @@ terraform {
       version = "1.0.2"
     }
   }
+
+  backend "s3" {
+    bucket = "homelab-tofu-backend"
+    key = "terraform.tfstate"
+    region = "auto"
+
+    use_lockfile = false
+    skip_credentials_validation = true
+    skip_metadata_api_check     = true
+    skip_region_validation      = true
+    skip_requesting_account_id  = true
+
+    endpoints = {
+      s3 = "https://18d4f014fdfeae80a01bdf486ef52ef4.r2.cloudflarestorage.com"
+    }
+  }
 }
 
 provider "incus" {}
